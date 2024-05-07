@@ -168,14 +168,6 @@ escuadra = {
 "stock": 3
 }
 
-diccionario ={
-"descripcion": "Martillo de carpintero de 16oz con mango de fibra de vidrio.",
-"id": 1001,
-"marca": "Stanley",
-"precio": 18.500,  
-"stock": 20
-}
-
 productos = {
     'herramientas': {
         'martillo': martillo,
@@ -214,7 +206,15 @@ for categoria in productos:
     print(datos_categoria.key())
     print(datos_categoria.val())
 
-#db.child("herramientas").child("martillo_stanley").set(diccionario)
-#herramientas = db.child("herramientas").get()
-#print(herramientas.key())
-#print(herramientas.val())
+diccionario ={
+"descripcion": "Martillo de carpintero de 16oz con mango de fibra de vidrio.",
+"id": 1001,
+"marca": "Stanley",
+"precio": 18.500,  
+"stock": 20
+}
+
+db.child("herramientas").child("martillo_stanley").set(diccionario)
+herramientas = db.child("herramientas").get()
+print(herramientas.key())
+print(herramientas.val())

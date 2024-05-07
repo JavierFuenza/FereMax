@@ -35,5 +35,12 @@ Recuperar datos:
 categoria = db.child("categoria").get()
 
 """
+# Función para recuperar datos de Firebase
+def recuperar_datos(categoria):
+    datos = db.child(categoria).get()
+    return datos.val()
 
 # Create your views here.
+def firebase(request):
+    herramientas = recuperar_datos("herramientas")
+    return render(request, 'firebase.html', {"herramientas": herramientas})
